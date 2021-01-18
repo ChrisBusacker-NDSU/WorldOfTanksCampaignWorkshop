@@ -89,7 +89,7 @@ function Calc() {
 	}
 	function TotalGunSpare(gunNum, gunNeeded){
 		var gunSpare = 7;
-		var gunFerrLeft;
+		var gunSpareLeft;
 		
 		gunSpareLeft = ((gunNeeded - gunNum) * gunSpare);
 		
@@ -153,3 +153,4 @@ function Calc() {
 		document.getElementById("totalScrap").innerHTML = totalScrap;
     }
 }
+
