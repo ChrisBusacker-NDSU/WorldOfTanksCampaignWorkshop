@@ -1,4 +1,5 @@
 // JavaScript World of Tanks Campiagns Workshop Calaculator
+//Created By: Christopher Busacker 1/18/2021
 function Calc3() {
 	var scrapNum = parseInt(document.getElementById("scrap3").value);
 	var ferNum = parseInt(document.getElementById("ferrous3").value);
