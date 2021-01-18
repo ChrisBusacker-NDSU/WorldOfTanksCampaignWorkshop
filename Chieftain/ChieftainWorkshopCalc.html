@@ -1,42 +1,163 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
 	<meta charset="utf-8" />
+	<script src="Chieftain.js" type="text/javascript"></script>
+	<script src="IS-5.js" type="text/javascript"></script>
+	<script src="Scorpion.js" type="text/javascript"></script>
+	<script src="IS-2M.js" type="text/javascript"></script>
+	<script>
+		function openPage(pageName,elmnt,color) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablink");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].style.backgroundColor = "";
+		}
+		document.getElementById(pageName).style.display = "block";
+		elmnt.style.backgroundColor = color;
+		}
+	</script>
 	<title></title>
-		<script src="Chieftain.js" type="text/javascript"></script>
 </head>
 <body>
-		Chieftain values
-		<br />
-		Total number of Scrap:					<input id="scrap" type="text" />
-		<br />
-		Total number of Ferrous:				<input id="ferrous" type="text" />
-		<br />
-		Total number of Non-Ferrous:			<input id="nonFerrous" type="text" />
-		<br />
-		Total number of Spare Parts:			<input id="spareParts" type="text" />
-		<br />
-		Total number of Engine Component:			<input id="engineCom" type="text" />
-		<br />
-		Total number of Gun Component:			<input id="gunCom" type="text" />
-		<br />
-		Total number of Tooling:			<input id="tooling" type="text" />
-		<br />
-		Total number of Fastners:			<input id="fast" type="text" />
-		<br />
-		<input id="Button1" type="button" onclick="Calc()" value="Calculate" />
-		<br />
-		<br />
-		Total Time needed to build all parts (displayed in hours):<p id="totalTime"></p>
-		Your Total Part Remaining build time (displayed in hours):<p id="remainingTime"></p>
-		Total number of NonFerrous still needed:<p id="totalNon"></p>
-		Total number of Ferrous still needed:<p id="totalFerr"></p>
-		Total number of Spare Parts still needed:<p id="totalSpare"></p>
-		Total number of Scrap still needed:<p id="totalScrap"></p>
+		<button class="tablink" onclick="openPage('Chieftain', this, 'red')"id="defaultOpen">Chieftain</button>
+		<button class="tablink" onclick="openPage('IS-5', this, 'green')">IS-5</button>
+		<button class="tablink" onclick="openPage('Scorpion', this, 'blue')">Scorpion</button>
+		<button class="tablink" onclick="openPage('IS-2M', this, 'orange')">IS-2M</button>
+
+		<div id="Chieftain" class="tabcontent">
+			
+			<h3>Chieftain</h3>
+			Chieftain values
+			<br />
+			Total number of Scrap:					<input id="scrap" type="text" />
+			<br />
+			Total number of Ferrous:				<input id="ferrous" type="text" />
+			<br />
+			Total number of Non-Ferrous:			<input id="nonFerrous" type="text" />
+			<br />
+			Total number of Spare Parts:			<input id="spareParts" type="text" />
+			<br />
+			Total number of Engine Component:			<input id="engineCom" type="text" />
+			<br />
+			Total number of Gun Component:			<input id="gunCom" type="text" />
+			<br />
+			Total number of Tooling:			<input id="tooling" type="text" />
+			<br />
+			Total number of Fastners:			<input id="fast" type="text" />
+			<br />
+			<input id="Button1" type="button" onclick="Calc()" value="Calculate Chieftain" />
+			<br />
+			<br />
+			Total Time needed to build all parts (displayed in hours):<p id="totalTime"></p>
+			Your Total Part Remaining build time (displayed in hours):<p id="remainingTime"></p>
+			Total number of NonFerrous still needed:<p id="totalNon"></p>
+			Total number of Ferrous still needed:<p id="totalFerr"></p>
+			Total number of Spare Parts still needed:<p id="totalSpare"></p>
+			Total number of Scrap still needed:<p id="totalScrap"></p>
 		
-		
-		
+		</div>
+
+		<div id="IS-5" class="tabcontent" style="display: none;">
+			
+			<h3>IS-5</h3>
+			IS-5 Values
+			<br />
+			Total number of Scrap:					<input id="scrap2" type="text" />
+			<br />
+			Total number of Ferrous:				<input id="ferrous2" type="text" />
+			<br />
+			Total number of Non-Ferrous:			<input id="nonFerrous2" type="text" />
+			<br />
+			Total number of Spare Parts:			<input id="spareParts2" type="text" />
+			<br />
+			Total number of Suspension Component:			<input id="suspenCom2" type="text" />
+			<br />
+			Total number of Armor Component:			<input id="armCom2" type="text" />
+			<br />
+			Total number of Tooling:			<input id="tooling2" type="text" />
+			<br />
+			Total number of Fastners:			<input id="fast2" type="text" />
+			<br />
+			<input id="Button2" type="button" onclick="Calc2()" value="Calculate IS-5" />
+			<br />
+			<br />
+			Total Time needed to build all parts (displayed in hours):<p id="totalTime2"></p>
+			Your Total Part Remaining build time (displayed in hours):<p id="remainingTime2"></p>
+			Total number of NonFerrous still needed:<p id="totalNon2"></p>
+			Total number of Ferrous still needed:<p id="totalFerr2"></p>
+			Total number of Spare Parts still needed:<p id="totalSpare2"></p>
+			Total number of Scrap still needed:<p id="totalScrap2"></p>
+		</div>
+
+		<div id="Scorpion" class="tabcontent" style="display: none;">
+			
+			<h3>Scorpion</h3>
+			Scorpion Values
+			<br />
+			Total number of Scrap:					<input id="scrap3" type="text" />
+			<br />
+			Total number of Ferrous:				<input id="ferrous3" type="text" />
+			<br />
+			Total number of Non-Ferrous:			<input id="nonFerrous3" type="text" />
+			<br />
+			Total number of Spare Parts:			<input id="spareParts3" type="text" />
+			<br />
+			Total number of Armor Component:			<input id="armCom3" type="text" />
+			<br />
+			Total number of Gun Component:			<input id="gunCom3" type="text" />
+			<br />
+			Total number of Tooling:			<input id="tooling3" type="text" />
+			<br />
+			Total number of Fastners:			<input id="fast3" type="text" />
+			<br />
+			<input id="Button3" type="button" onclick="Calc3()" value="Calculate Scorpion" />
+			<br />
+			<br />
+			Total Time needed to build all parts (displayed in hours):<p id="totalTime3"></p>
+			Your Total Part Remaining build time (displayed in hours):<p id="remainingTime3"></p>
+			Total number of NonFerrous still needed:<p id="totalNon3"></p>
+			Total number of Ferrous still needed:<p id="totalFerr3"></p>
+			Total number of Spare Parts still needed:<p id="totalSpare3"></p>
+			Total number of Scrap still needed:<p id="totalScrap3"></p>
+		</div>
+
+		<div id="IS-2M" class="tabcontent" style="display: none;">
+			
+			<h3>IS-2M</h3>
+			IS-2M values
+			<br />
+			Total number of Scrap:					<input id="scrap4" type="text" />
+			<br />
+			Total number of Ferrous:				<input id="ferrous4" type="text" />
+			<br />
+			Total number of Non-Ferrous:			<input id="nonFerrous4" type="text" />
+			<br />
+			Total number of Spare Parts:			<input id="spareParts4" type="text" />
+			<br />
+			Total number of Engine Component:			<input id="engineCom4" type="text" />
+			<br />
+			Total number of Suspension Component:			<input id="suspenCom4" type="text" />
+			<br />
+			Total number of Tooling:			<input id="tooling4" type="text" />
+			<br />
+			Total number of Fastners:			<input id="fast4" type="text" />
+			<br />
+			<input id="Button4" type="button" onclick="Calc4()" value="Calculate IS-2M" />
+			<br />
+			<br />
+			Total Time needed to build all parts (displayed in hours):<p id="totalTime4"></p>
+			Your Total Part Remaining build time (displayed in hours):<p id="remainingTime4"></p>
+			Total number of NonFerrous still needed:<p id="totalNon4"></p>
+			Total number of Ferrous still needed:<p id="totalFerr4"></p>
+			Total number of Spare Parts still needed:<p id="totalSpare4"></p>
+			Total number of Scrap still needed:<p id="totalScrap4"></p>
+		</div>
 		
 </body>
 </html>
